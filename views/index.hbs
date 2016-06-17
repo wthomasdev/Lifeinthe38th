@@ -1,0 +1,15 @@
+<h1>Life in the 38th</h1>
+
+<table>
+  <thead>
+
+    <td>Posts</td>
+  </thead>
+  {{#each blog as |blog|}}
+  <tr>
+    <td>{{blog.title}}</td>
+    <td>{{blog.content}}</td>
+    <td>{{blog.username}}</td>
+  </tr>
+  {{/each}}
+</table>
