@@ -15,6 +15,24 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/newuser', function (req, res, next) {
+  res.render('newuser');
+})
+
+router.post('/newuser', function (req, res, next) {
+  knex('user').insert(req.body).then(function () {
+    res.redirect('/');
+  })
+})
+
+router.get('/create', function (req, res, next) {
+  knex('user').select().then(function(username) {
+
+    res.render('create', { username: username});
+  })
+
+})
+
 module.exports = router;
 
 // .join("comment", function () {

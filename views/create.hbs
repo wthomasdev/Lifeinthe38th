@@ -1,0 +1,12 @@
+<form action="/create" method="post">
+  <input type="text" name="title" placeholder="Title of Post">
+  <select  name="username">
+    {{# each username}}
+    <option value="{{this.username}}">{{this.username}} </option>
+    {{/each}}
+  </select>
+  <textarea name="content" placeholder="post content"></textarea>
+  <input type="url" name="image" placeholder="Image Url">
+  <button type="submit">Add a Post</button>
+
+</form>
