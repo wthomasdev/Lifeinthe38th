@@ -28,17 +28,20 @@ exports.seed = function(knex, Promise) {
       knex('post').insert({
         title:'The Truth About Americans',
         content: 'They absolutely love hotpockets.',
-        user_id: will
+        user_id: will,
+        image: 'http://assets.bwbx.io/images/users/iqjWHBFdfxIU/ivuuBnYMRXwc/v1/-1x-1.jpg'
       }).returning('id'),
       knex('post').insert({
         title: 'Life in the mines',
         content:'It\'s absolutely savage down the mines my bro.',
-        user_id: lucas
+        user_id: lucas,
+        image: 'http://photos.mycapture.com/STLT/1141329/33350847E.jpg'
       }).returning('id'),
       knex('post').insert({
         title: 'Breaking my face, a real life story',
-        content: 'Don\'t break your face kids, it\'s a real hassle. Tell your friends.',
-        user_id: laney
+        content: 'Don\'t break your hands, it\'s a real hassle. Tell your friends.',
+        user_id: laney,
+        image: 'http://www.bicycling.com/sites/bicycling.com/files/articles/2015/10/crash-996.jpg'
       }).returning('id')
     ).then(function(postIds) {
       return {

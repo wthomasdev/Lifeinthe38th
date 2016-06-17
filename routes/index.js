@@ -6,7 +6,8 @@ var knex = require('../db/knex');
 router.get('/', function(req, res, next) {
   knex('post').select()
   .join("user", function () {
-      this.on("post.user_id", "=", "user.id")
+      this.on("post.user_id", "=", "user.id");
+
     }).then(function(blog) {
       console.log(blog);
       res.render('index', { title: 'Express', blog: blog });
@@ -15,3 +16,8 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+// .join("comment", function () {
+//     this.on("post_id", "=", "post.id");
+//
+// })

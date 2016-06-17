@@ -1,15 +1,16 @@
-<h1>Life in the 38th</h1>
+<main>
 
-<table>
-  <thead>
 
-    <td>Posts</td>
-  </thead>
-  {{#each blog as |blog|}}
-  <tr>
-    <td>{{blog.title}}</td>
-    <td>{{blog.content}}</td>
-    <td>{{blog.username}}</td>
-  </tr>
+<h1>Life in the 38th State</h1>
+
+{{#each blog}}
+  <div class="container">
+    <h2>{{this.title}}</h2>
+    <p>{{this.content}}</p>
+
+    <img class="image" src="{{this.image}}" alt="" />
+    <p>{{this.username}}</p>
+    </div>
   {{/each}}
-</table>
+
+</main>
