@@ -1,11 +1,12 @@
 <div class="container">
-<h2>{{post.name}}</h2>
+<h2>{{blog.name}}</h2>
 <a href="/">Home</a>
-<a href="/{{post.id}}/edit">Edit</a>
-<a href="/{{post.id}}/delete">Delete</a>
-<img class="image"src="{{post.image}}" alt="" />
-  <h1>Title: {{post.title}}</h1>
+<a href="/{{blog.id}}/edit">Edit</a>
+<a href="/{{blog.id}}/delete">Delete</a>
+<h1 class="detailtitle">{{blog.title}}</h1>
+<img class="image"src="{{blog.image}}" alt="" />
+
   <p>
-    Content: {{post.content}}
+  {{blog.content}}
   </p>
 </div>

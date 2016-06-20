@@ -1,0 +1,7 @@
+<form action="/{{blog.id}}/edit" method="post">
+  <input onClick="this.select()" type="text" name="title" placeholder="Name" value="{{blog.title}}">
+  <textarea name="content" placeholder="Description" value="{{blog.content}}"></textarea>
+  <input type="url" name="image" placeholder="Image Url" value="{{blog.image}}">
+  <button type="submit">Edit</button> 
+
+</form>

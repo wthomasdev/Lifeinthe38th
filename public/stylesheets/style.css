@@ -38,6 +38,10 @@ img {
   width:35vw;
 }
 
+.detailtitle {
+  color:black;
+}
+
 .container {
   margin-top:5vh;
   display:flex;

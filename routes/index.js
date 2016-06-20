@@ -33,6 +33,39 @@ router.get('/create', function (req, res, next) {
 
 })
 
+router.post('/create', function (req, res, next) {
+  console.log(req.body);
+  knex('post').insert(req.body).then(function () {
+    res.redirect('/');
+  })
+})
+
+router.get('/:id', function (req, res, next) {
+  knex('post').where({id: req.params.id}).first().then(function(blog) {
+    console.log(blog);
+    res.render('detail', {blog:blog})
+  })
+})
+
+router.get('/:id/delete', function(req, res, next) {
+  knex('post').where({id: req.params.id}).del().then(function () {
+    res.redirect('/');
+  })
+})
+
+router.get('/:id/edit', function (req, res, next) {
+  knex('post').where({id: req.params.id}).first().then(function (blog) {
+    res.render('edit', {blog:blog})
+  })
+
+})
+//
+router.post('/:id/edit', function (req, res, next) {
+  knex('post').where({id: req.params.id}).update(req.body).then(function () {
+    res.redirect('/');
+  })
+})
+
 module.exports = router;
 
 // .join("comment", function () {

@@ -1,8 +1,8 @@
 <form action="/create" method="post">
   <input type="text" name="title" placeholder="Title of Post">
-  <select  name="username">
+  <select  name="user_id">
     {{# each username}}
-    <option value="{{this.username}}">{{this.username}} </option>
+    <option value="{{this.id}}">{{this.username}} </option>
     {{/each}}
   </select>
   <textarea name="content" placeholder="post content"></textarea>

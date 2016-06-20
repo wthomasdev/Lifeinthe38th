@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.string('title');
     table.text('content');
-    table.integer('user_id').references('id').inTable('user');
+    table.integer('user_id').references('id').inTable('user').onDelete('cascade');
   })
 };
 
